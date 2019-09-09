@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.nebula.account.mapper.AccountMapper">
+    <update id="transfer" parameterType="io.nebula.account.dto.TransferDto">
+        UPDATE account
+        SET money = money - #{money}
+        WHERE user_id = #{userId} AND money > #{money}
+    </update>
+</mapper>
